@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+    "crispy_forms",
+    "crispy_bootstrap5",
     # 'bootstrap5',
     # 'tailwind',
     # 'theme'
@@ -46,7 +49,8 @@ INSTALLED_APPS = [
 ]
 # TAILWIND_APP_NAME= 'theme'
 # NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
-
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,3 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # COMPRESS_ENABLED = True
 
 # STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+LOGIN_REDIRECT_URL = 'profile' # on redirect enter
+LOGIN_URL = 'login' # on successful login
+# LOGOUT_REDIRECT_URL = 'login' # on successful login

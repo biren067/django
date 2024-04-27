@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block contents %}
+    {% if user.is_authenticated %}
+        {{ user.username}}
+    {% else %}
+    <h1 class="m-1 text-blue-900 text-3xl border-5 rounded ">{{user.username}} is Logged-in </h1>
+    {% endif %}
+{% endblock contents %}

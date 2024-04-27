@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block contents %}
+    <form method="POST" class="content-section">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form|crispy }}
+        </div>
+        <formfield class="mt-4">
+            <button type="submit" class="btn btn-outline-info border-top-2">Submit</button>
+            <small class="text-muted">Already have account <a href="{% url 'login' %}">Login</a></small>
+        </formfield>
+        
+    </form>
+{% endblock contents %}
